@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>小小爬虫</title>
+    <link href="static/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top site-navbar">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="./">小小爬虫系统</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/">首页</a></li>
+                <li><a href="/new"><i class="glyphicon glyphicon-plus"></i>添加新网页</a></li>
+                <li><a href="http://127.0.0.1:5555">查看celery flower状态</a></li>
+                <li><a href="/about">关于</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+<div style="width: 400px;margin: auto;">
+<div class="panel panel-primary">
+  <div class="panel-heading">添加新页面</div>
+    <div class="panel-body">
+    <form method=POST>
+      <div class="form-group">
+        <label >URL</label>
+        <input type="text" class="form-control" name="url"  placeholder="" />
+      </div>
+      <div class="form-group">
+        <label >过滤路径：[/表示没过虑,如/ooxx，表示URL中必须出现]</label>
+        <input type="text" class="form-control" name="findpath"  value="/" />
+      </div>
+       <div class="form-group">
+        <label >下载名</label>
+        <input type="text" class="form-control" name="tarfilename"  placeholder="" />
+      </div>
+      <div class="form-group">
+        <label >xpath：[如a,img等，多个用,分割]</label>
+        <input type="text" class="form-control" name="xpath"  placeholder="" />
+      </div>
+      <div class="form-group">
+        <label >xlink：[a标签中的属性如href，和上面两两对应]</label>
+        <input type="text" class="form-control" name="xlink"  placeholder="" />
+      </div>
+      <button class="btn btn-primary" type="submit">添加</button>
+      </form>
+    </div>
+</div>
+</div>
+
+
+    <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <script src="static/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+  </body>
+</html>

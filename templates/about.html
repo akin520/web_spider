@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>小小爬虫</title>
+    <link href="static/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top site-navbar">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="./">小小爬虫系统</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/">首页</a></li>
+                <li><a href="/new"><i class="glyphicon glyphicon-plus"></i>添加新网页</a></li>
+                <li><a href="http://127.0.0.1:5555">查看celery flower状态</a></li>
+                <li><a href="/about">关于</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<br/>
+<br/>
+<br/>
+<br/>
+<div class="container" style="width: 1000px;margin: auto;">
+<div class="panel panel-default">
+<section class="post-content">
+    <h2 id="">使用说明</h2>
+    <p>小小爬虫是基于urllib urllib2 BeautifulSoup celery redis mysql的网页爬虫工具</p>
+    <h2 id="">安装模块</h2>
+    <p>pip install celery redis</p>
+    <p>pip install requests</p>
+    <p>pip install BeautifulSoup4</p>
+    <p>pip install flower</p>
+    <h2>添加网页</h2>
+    <p>URL：是要抓取的页面，如图中的http://news.163.com</p>
+    <p>过滤路径：抓取包含有这么路径的地址，如/ooxx，要抓取的链接中必须有/ooxx这个路径，如http://news.163.com/aa/ooxx/1.html,http://news.163.com/ooxx/index.html都为合法</p>
+    <p>下载名：打包后的名字</p>
+    <p>xpath：如a，src等</p>
+    <p>xlink：如a中属性href,和xpath对应，属性只能对应一个</p>
+    <h2 id="">运行</h2>
+    <p>运行celery: celery -A spider worker -c 10 --loglevel=INFO</p>
+    <p>运行celery监控工具: celery -A spider flower --port=5555</p>
+    <p>运行web.py: python web_service.py</p>
+</section>
+<section class="featured-media">
+    <h2>运行截图</h2>
+    <img src="static/index.png" alt="首页">
+    <img src="static/add.png" alt="帮助">
+    <img src="static/celery.png" alt="celery">
+    <img src="static/flower.png" alt="flower">
+</section>
+</div>
+</div>
+    <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <script src="static/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
